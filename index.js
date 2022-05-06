@@ -1,23 +1,52 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose")
+const RecipeModel = require("./models/Recipe.model.js")
+let recipeArr = require("./recipes.json")
 
-// Import of the model Recipe from './models/Recipe.model.js'
-const Recipe = require('./models/Recipe.model');
-// Import of the data from './data.json'
-const data = require('./data');
+mongoose.connect("mongodb://localhost:27017/recipe-model")
 
-const MONGODB_URI = 'mongodb://localhost:27017/recipe-app';
 
-// Connection to the database "recipe-app"
-mongoose
-  .connect(MONGODB_URI)
-  .then(x => {
-    console.log(`Connected to the database: "${x.connection.name}"`);
-    // Before adding any recipes to the database, let's remove all existing ones
-    return Recipe.deleteMany()
-  })
-  .then(() => {
-    // Run your code here, after you have insured that the connection was made
-  })
-  .catch(error => {
-    console.error('Error connecting to the database', error);
-  });
+.then((response) => {
+    console.log("no incluir recetas cocinadas")
+    return RecipeModel.deleteMany() 
+})
+
+
+.then((response) => {
+    return RecipeModel.create({
+        title: "Paella",
+        level: "UltraPro Chef",
+        ingredients: ["Arroz", "Pimiento", "Conejo", "Caracoles", "Sofrito"],
+        cuisine: "Mediterranea",
+        dishType: "main_course",
+        image: "https://i1.wp.com/aliolitoursalicante.com/wp-content/uploads/2016/11/arroz-con-conejo-destacada.jpg?fit=780%2C520&ssl=1",
+        duration: 120,
+        creator: "PolMadede"
+    })
+    })
+
+
+.then((response) => {
+    console.log("la paella ha sido cocinada")
+
+    return RecipeModel.insertMany(recipeArr)
+})
+
+.then((response) => {
+    console.log("nuevas recetas han sido cocinadas")
+    return RecipeModel.findOneAndUpdate({name: "pasta"}, {duration: 100}, {new: true})
+})
+
+.then((response) => {
+    console.log("cambio de duracion")
+    return RecipeModel.deleteOne({name: "Burrito" })
+})
+.then((response) => {
+    console.log("eliminamos burrito, no le gusta a Pablo")
+})
+
+
+.catch((err) => {
+    console.log(err)
+})
+
+mongoose.connection.close();

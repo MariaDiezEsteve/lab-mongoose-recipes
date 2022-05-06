@@ -1,0 +1,54 @@
+[ 
+    {
+    "title": "Sushi",
+    "level": "Amateur Chef",
+    "ingredients": ["Arroz", "Salmon", "Algas", "Soja"],
+    "cuisine": "Chinese",
+    "dishType":"other",
+    "image": "https://www.prensalibre.com/wp-content/uploads/2020/06/Sushi-1.jpg?quality=52",
+    "duration": 75,
+    "creator": "MadePol"
+    },
+
+    {
+    "title": "Pasta",
+    "level": "Easy Peasy",
+    "ingredients": ["Macarrones", "Tomate", "Carne", "Albahaca"],
+    "cuisine": "Italian",
+    "dishType":"other",
+    "image": "https://www.kenwoodworld.com/Global/Countries/Spain/Macarrones-con-tomate_Foto2.jpg",
+    "duration": 25,
+    "creator": "DeOl"
+    },
+    
+    {
+        "title": "Burrito",
+        "level": "Easy Peasy",
+        "ingredients": ["Torta", "Fijoles", "Carne", "Picante"],
+        "cuisine": "Mexican",
+        "dishType": "breakfast",
+        "image": "https://t2.rg.ltmcdn.com/es/posts/9/4/3/burritos_mexicanos_de_carne_picada_55349_orig.jpg",
+        "duration": 55,
+        "creator": "Map"
+    },
+    {
+        "title": "Pollo al limon",
+        "level": "Amateur Chef",
+        "ingredients": ["Pollo", "Limon", "Champagne", "Pimienta"],
+        "cuisine": "Asiatica",
+        "dishType":"snack",
+        "image": "https://i.blogs.es/d2c7e0/pollo-al-limon-al-estilo-chino/1366_2000.jpg",
+        "duration": 40,
+        "creator": "Pam"
+    },
+    {
+        "title": "Gin",
+        "level": "Easy Peasy",
+        "ingredients": ["Ginebra", "Tonica", "Hielos"],
+        "cuisine": "Spanish",
+        "dishType":"drink",
+        "image": "https://www.pequerecetas.com/wp-content/uploads/2021/05/gin-tonic-receta.jpg",
+        "duration": 15,
+        "creator": "MP"
+    }
+]
